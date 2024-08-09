@@ -200,20 +200,11 @@
 		}
 	}
 
-	const hashValue = window.location.hash.split("#")[1];
-
-	let encoded;
-	if (hashValue && !isBase64(hashValue)) {
-		encoded = btoa(hashValue);
-		window.location.hash = `#${encoded}`;
-	} else {
-		encoded = hashValue;
-	}
+	
 
 	let decode, urlDecoded;
 
 	try {
-		decode = encoded ? atob(encoded) : encoded;
 		urlDecoded = url ? atob(url) : url;
 	} catch (e) {}
 
